@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuestPad</title>
+<meta name="description" content="Upload one card and get a whole set in the same style. Cards, sprites and 3D models for your game.">
+<meta property="og:title" content="QuestPad">
+<meta property="og:description" content="Upload one card and get a whole set in the same style.">
+<meta property="og:image" content="https://questpad.gg/share.jpg">
+<meta property="og:url" content="https://questpad.gg/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/display.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: 'QP Display'; src: url('fonts/display.woff2') format('woff2'); font-weight: 400 900; font-display: swap; }
+  @font-face { font-family: 'QP Sans'; src: url('fonts/ui.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+  :root {
+    --bg: #0b0d0f;
+    --ink: #f4f6f7;
+    --ink-soft: #c9cfd4;
+    --ink-faint: #8a959e;
+    --gold: #e2b867;
+    --gold-hi: #f6dc9c;
+    --line: #272f37;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.55 'QP Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    position: relative;
+    min-height: min(100svh, 820px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 16px 40px;
+    background: var(--bg) url('hall.jpg') center 30% / cover no-repeat;
+    isolation: isolate;
+  }
+  @media (max-width: 800px) { .hero { background-image: url('hall-768.jpg'); } }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(11,13,15,.55) 0%, rgba(11,13,15,0) 22%),
+      linear-gradient(0deg, rgba(11,13,15,1) 0%, rgba(11,13,15,.82) 34%, rgba(11,13,15,.15) 70%, rgba(11,13,15,0) 100%);
+  }
+  .wordmark {
+    position: absolute; top: 24px; left: 16px; right: 16px;
+    max-width: 1080px; margin: 0 auto;
+    font: 700 22px/1 'QP Display', Georgia, serif;
+    letter-spacing: .18em;
+    color: var(--gold-hi);
+  }
+  .inner { width: 100%; max-width: 1080px; margin: 0 auto; }
+  h1 {
+    margin: 0 0 14px;
+    max-width: 16ch;
+    font: 700 clamp(36px, 7vw, 68px)/1.04 'QP Display', Georgia, serif;
+    letter-spacing: -.005em;
+    text-wrap: balance;
+  }
+  .lead { margin: 0 0 28px; max-width: 34em; font-size: clamp(17px, 2.2vw, 20px); color: var(--ink-soft); }
+  .status {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 16px;
+    border: 1px solid rgba(226,184,103,.5);
+    border-radius: 999px;
+    background: rgba(11,13,15,.6);
+    color: var(--gold-hi);
+    font-size: 15px;
+  }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+  .what { max-width: 1112px; margin: 0 auto; padding: 56px 16px 24px; }
+  .what ul {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .what li { background: var(--bg); padding: 24px 22px; }
+  .what h2 { margin: 0 0 6px; font: 700 21px/1.2 'QP Display', Georgia, serif; color: var(--gold-hi); }
+  .what p { margin: 0; color: var(--ink-soft); }
+  footer {
+    max-width: 1112px; margin: 0 auto;
+    padding: 32px 16px 48px;
+    display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+    color: var(--ink-faint); font-size: 15px;
+  }
+  a { color: var(--gold-hi); text-underline-offset: 3px; }
+  a:hover { color: #fff; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wordmark">QUESTPAD</div>
+    <div class="inner">
+      <h1>One card in.<br>A whole set out.</h1>
+      <p class="lead">Upload a card you love, or design one with us. QuestPad makes the rest of the set in the same style: new cards, sprites and 3D models for your game.</p>
+      <span class="status">In private testing. Opening soon.</span>
+    </div>
+  </header>
+
+  <main class="what">
+    <ul>
+      <li><h2>Cards</h2><p>A full set of trading cards that match your reference, with your names and numbers.</p></li>
+      <li><h2>Sprites</h2><p>Characters, items and icons for 2D games, in your card's look.</p></li>
+      <li><h2>3D models</h2><p>Characters, objects and buildings, ready for a game engine or a printer.</p></li>
+    </ul>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 QuestPad</span>
+    <a href="mailto:hello@questpad.gg">hello@questpad.gg</a>
+  </footer>
+</body>
+</html>
